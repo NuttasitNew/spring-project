@@ -1,1 +1,6 @@
-<
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>sukpoom.nuttasit</groupId>
+    <artifactId>spring-project</artifactId>
+    <version>0.1</version>
+</project>
