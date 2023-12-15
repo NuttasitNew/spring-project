@@ -10,6 +10,7 @@ import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,7 @@ class StaffService{
     Iterable<Staff> allDetail(){
         return sd.findAll();
     }
+
     // READ by ID @RequestParam
     @GetMapping("/api/staff-detail-by-id")
     public Staff getStaffById(@RequestParam(name = "number") int number) {
@@ -68,7 +70,7 @@ class StaffService{
 
 }
 
-@Service
+@Repository
 interface StaffDetail extends CrudRepository<Staff,Integer>{
 
     @Query("SELECT * FROM staff WHERE status = 'Active'")
